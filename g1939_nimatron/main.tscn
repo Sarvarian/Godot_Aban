@@ -1,0 +1,425 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://g1939_nimatron/text/text.tscn" type="PackedScene" id=1]
+[ext_resource path="res://g1939_nimatron/texturs/trigger.png" type="Texture" id=2]
+[ext_resource path="res://g1939_nimatron/texturs/star.png" type="Texture" id=3]
+[ext_resource path="res://g1939_nimatron/texturs/button.png" type="Texture" id=4]
+[ext_resource path="res://g1939_nimatron/texturs/light.png" type="Texture" id=5]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 5 )
+region = Rect2( 16, 0, 16, 16 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 16, 16 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": false,
+"name": "Off",
+"speed": 0.0
+}, {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "On",
+"speed": 0.0
+} ]
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 4 )
+region = Rect2( 24, 0, 24, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 24, 16 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 4 ) ],
+"loop": true,
+"name": "green",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 5 ) ],
+"loop": true,
+"name": "red",
+"speed": 5.0
+} ]
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 9, 9 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 9, 0, 9, 9 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "on",
+"speed": 3.0
+} ]
+
+[node name="Main" type="Node2D"]
+
+[node name="Text" parent="." instance=ExtResource( 1 )]
+position = Vector2( 24, 8 )
+
+[node name="Lines" type="Node2D" parent="."]
+position = Vector2( 16, 136 )
+rotation = -1.57079
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="Line" type="Node2D" parent="Lines"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Light1" type="Node2D" parent="Lines/Line"]
+rotation = 1.57079
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line/Light1"]
+frames = SubResource( 3 )
+animation = "Off"
+
+[node name="Light2" type="Node2D" parent="Lines/Line"]
+position = Vector2( 0, 16 )
+rotation = 1.57079
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line/Light2"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light3" type="Node2D" parent="Lines/Line"]
+position = Vector2( 0, 32 )
+rotation = 1.57079
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line/Light3"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light4" type="Node2D" parent="Lines/Line"]
+position = Vector2( 0, 48 )
+rotation = 1.57079
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line/Light4"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light5" type="Node2D" parent="Lines/Line"]
+position = Vector2( 0, 64 )
+rotation = 1.57079
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line/Light5"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light6" type="Node2D" parent="Lines/Line"]
+position = Vector2( 0, 80 )
+rotation = 1.57079
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line/Light6"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light7" type="Node2D" parent="Lines/Line"]
+position = Vector2( 0, 96 )
+rotation = 1.57079
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line/Light7"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Line2" type="Node2D" parent="Lines"]
+position = Vector2( 24, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Light1" type="Node2D" parent="Lines/Line2"]
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line2/Light1"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light2" type="Node2D" parent="Lines/Line2"]
+position = Vector2( 0, 16 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line2/Light2"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light3" type="Node2D" parent="Lines/Line2"]
+position = Vector2( 0, 32 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line2/Light3"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light4" type="Node2D" parent="Lines/Line2"]
+position = Vector2( 0, 48 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line2/Light4"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light5" type="Node2D" parent="Lines/Line2"]
+position = Vector2( 0, 64 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line2/Light5"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light6" type="Node2D" parent="Lines/Line2"]
+position = Vector2( 0, 80 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line2/Light6"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light7" type="Node2D" parent="Lines/Line2"]
+position = Vector2( 0, 96 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line2/Light7"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Line3" type="Node2D" parent="Lines"]
+position = Vector2( 48, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Light1" type="Node2D" parent="Lines/Line3"]
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line3/Light1"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light2" type="Node2D" parent="Lines/Line3"]
+position = Vector2( 0, 16 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line3/Light2"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light3" type="Node2D" parent="Lines/Line3"]
+position = Vector2( 0, 32 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line3/Light3"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light4" type="Node2D" parent="Lines/Line3"]
+position = Vector2( 0, 48 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line3/Light4"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light5" type="Node2D" parent="Lines/Line3"]
+position = Vector2( 0, 64 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line3/Light5"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light6" type="Node2D" parent="Lines/Line3"]
+position = Vector2( 0, 80 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line3/Light6"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light7" type="Node2D" parent="Lines/Line3"]
+position = Vector2( 0, 96 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line3/Light7"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Line4" type="Node2D" parent="Lines"]
+position = Vector2( 72, 0 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Light1" type="Node2D" parent="Lines/Line4"]
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line4/Light1"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light2" type="Node2D" parent="Lines/Line4"]
+position = Vector2( 0, 16 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line4/Light2"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light3" type="Node2D" parent="Lines/Line4"]
+position = Vector2( 0, 32 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line4/Light3"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light4" type="Node2D" parent="Lines/Line4"]
+position = Vector2( 0, 48 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line4/Light4"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light5" type="Node2D" parent="Lines/Line4"]
+position = Vector2( 0, 64 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line4/Light5"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light6" type="Node2D" parent="Lines/Line4"]
+position = Vector2( 0, 80 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line4/Light6"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="Light7" type="Node2D" parent="Lines/Line4"]
+position = Vector2( 0, 96 )
+rotation = 1.57079
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="AnimatedSprite" parent="Lines/Line4/Light7"]
+frames = SubResource( 3 )
+animation = "On"
+
+[node name="button" type="AnimatedSprite" parent="."]
+position = Vector2( 100, 172 )
+frames = SubResource( 6 )
+animation = "green"
+
+[node name="trigger" type="Sprite" parent="."]
+position = Vector2( 20, 164 )
+texture = ExtResource( 2 )
+
+[node name="trigger2" type="Sprite" parent="."]
+position = Vector2( 36, 180 )
+texture = ExtResource( 2 )
+
+[node name="trigger3" type="Sprite" parent="."]
+position = Vector2( 20, 180 )
+texture = ExtResource( 2 )
+
+[node name="trigger4" type="Sprite" parent="."]
+position = Vector2( 36, 164 )
+texture = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 64, 152 )
+frames = SubResource( 9 )
+animation = "on"
+frame = 1
+playing = true
+
+[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
+position = Vector2( 72, 152 )
+frames = SubResource( 9 )
+animation = "on"
+frame = 1
+playing = true
+
+[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
+position = Vector2( 80, 152 )
+frames = SubResource( 9 )
+animation = "on"
+playing = true
