@@ -18,3 +18,6 @@ Actually! there is another game engine that has this kind of balance. "Unreal En
 
 # What is a Game System
  It is a layer between Game-Engine and the Game itself. It helps Game-Designer to make and design his dream game faster and easier.
+
+# Why naming Aban
+ Cause it starts with 'A' 'B' and then 'A' again, and there's a high chance that it goes above other directories.
