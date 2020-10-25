@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://g1939_nimatron/texturs/star.png" type="Texture" id=1]
+[ext_resource path="res://g1939_nimatron/thinking_lights/thinking_lights.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=4]
+resource_name = "Thinking"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Light1:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "Off", "On", "Off" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Light2:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "Off", "On", "Off" ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Light3:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ "Off", "On", "Off" ]
+}
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 9, 9 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 9, 0, 9, 9 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ) ],
+"loop": false,
+"name": "On",
+"speed": 0.0
+}, {
+"frames": [ SubResource( 2 ) ],
+"loop": true,
+"name": "Off",
+"speed": 5.0
+} ]
+
+[node name="ThinkingLights" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Thinking = SubResource( 4 )
+
+[node name="Light1" type="AnimatedSprite" parent="."]
+frames = SubResource( 3 )
+animation = "Off"
+
+[node name="Light2" type="AnimatedSprite" parent="."]
+position = Vector2( 8, 0 )
+frames = SubResource( 3 )
+animation = "Off"
+
+[node name="Light3" type="AnimatedSprite" parent="."]
+position = Vector2( 16, 0 )
+frames = SubResource( 3 )
+animation = "Off"

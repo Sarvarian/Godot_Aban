@@ -1,425 +1,199 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
-[ext_resource path="res://g1939_nimatron/text/text.tscn" type="PackedScene" id=1]
-[ext_resource path="res://g1939_nimatron/texturs/trigger.png" type="Texture" id=2]
-[ext_resource path="res://g1939_nimatron/texturs/star.png" type="Texture" id=3]
-[ext_resource path="res://g1939_nimatron/texturs/button.png" type="Texture" id=4]
-[ext_resource path="res://g1939_nimatron/texturs/light.png" type="Texture" id=5]
+[ext_resource path="res://g1939_nimatron/scripts/game_master.gd" type="Script" id=1]
+[ext_resource path="res://g1939_nimatron/scripts/line.gd" type="Script" id=2]
+[ext_resource path="res://g1939_nimatron/light/light.tscn" type="PackedScene" id=3]
+[ext_resource path="res://g1939_nimatron/text/text.tscn" type="PackedScene" id=4]
+[ext_resource path="res://g1939_nimatron/texturs/trigger.png" type="Texture" id=5]
+[ext_resource path="res://g1939_nimatron/texturs/button.png" type="Texture" id=6]
+[ext_resource path="res://g1939_nimatron/thinking_lights/thinking_lights.tscn" type="PackedScene" id=7]
+[ext_resource path="res://g1939_nimatron/light_offer/light_offer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://g1939_nimatron/token/token_scene.tscn" type="PackedScene" id=9]
+[ext_resource path="res://g1939_nimatron/texturs/token_giver.png" type="Texture" id=10]
+[ext_resource path="res://g1939_nimatron/light/light_blue.tscn" type="PackedScene" id=11]
 
 [sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 5 )
-region = Rect2( 16, 0, 16, 16 )
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 16, 16 )
+atlas = ExtResource( 6 )
+region = Rect2( 24, 0, 24, 16 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ SubResource( 1 ) ],
 "loop": false,
-"name": "Off",
+"name": "Red",
 "speed": 0.0
 }, {
 "frames": [ SubResource( 2 ) ],
-"loop": true,
-"name": "On",
+"loop": false,
+"name": "Green",
 "speed": 0.0
 } ]
 
 [sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 4 )
-region = Rect2( 24, 0, 24, 16 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 4 )
+atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 24, 16 )
 
-[sub_resource type="SpriteFrames" id=6]
-animations = [ {
-"frames": [ SubResource( 4 ) ],
-"loop": true,
-"name": "green",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 5 ) ],
-"loop": true,
-"name": "red",
-"speed": 5.0
-} ]
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 9, 9 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 3 )
-region = Rect2( 9, 0, 9, 9 )
-
-[sub_resource type="SpriteFrames" id=9]
-animations = [ {
-"frames": [ SubResource( 7 ), SubResource( 8 ) ],
-"loop": true,
-"name": "on",
-"speed": 3.0
-} ]
-
 [node name="Main" type="Node2D"]
+script = ExtResource( 1 )
+token_scene = ExtResource( 9 )
 
-[node name="Text" parent="." instance=ExtResource( 1 )]
-position = Vector2( 24, 8 )
+[node name="Line1" type="Node2D" parent="."]
+position = Vector2( 16, 64 )
+script = ExtResource( 2 )
 
-[node name="Lines" type="Node2D" parent="."]
-position = Vector2( 16, 136 )
-rotation = -1.57079
-__meta__ = {
-"_edit_group_": true,
-"_edit_lock_": true
-}
+[node name="Light" parent="Line1" instance=ExtResource( 11 )]
 
-[node name="Line" type="Node2D" parent="Lines"]
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Light2" parent="Line1" instance=ExtResource( 11 )]
+position = Vector2( 16, 0 )
 
-[node name="Light1" type="Node2D" parent="Lines/Line"]
-rotation = 1.57079
+[node name="Light3" parent="Line1" instance=ExtResource( 11 )]
+position = Vector2( 32, 0 )
 
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line/Light1"]
-frames = SubResource( 3 )
-animation = "Off"
-
-[node name="Light2" type="Node2D" parent="Lines/Line"]
-position = Vector2( 0, 16 )
-rotation = 1.57079
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line/Light2"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light3" type="Node2D" parent="Lines/Line"]
-position = Vector2( 0, 32 )
-rotation = 1.57079
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line/Light3"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light4" type="Node2D" parent="Lines/Line"]
-position = Vector2( 0, 48 )
-rotation = 1.57079
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line/Light4"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light5" type="Node2D" parent="Lines/Line"]
-position = Vector2( 0, 64 )
-rotation = 1.57079
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line/Light5"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light6" type="Node2D" parent="Lines/Line"]
-position = Vector2( 0, 80 )
-rotation = 1.57079
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line/Light6"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light7" type="Node2D" parent="Lines/Line"]
-position = Vector2( 0, 96 )
-rotation = 1.57079
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line/Light7"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Line2" type="Node2D" parent="Lines"]
-position = Vector2( 24, 0 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Light1" type="Node2D" parent="Lines/Line2"]
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line2/Light1"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light2" type="Node2D" parent="Lines/Line2"]
-position = Vector2( 0, 16 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line2/Light2"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light3" type="Node2D" parent="Lines/Line2"]
-position = Vector2( 0, 32 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line2/Light3"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light4" type="Node2D" parent="Lines/Line2"]
-position = Vector2( 0, 48 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line2/Light4"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light5" type="Node2D" parent="Lines/Line2"]
-position = Vector2( 0, 64 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line2/Light5"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light6" type="Node2D" parent="Lines/Line2"]
-position = Vector2( 0, 80 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line2/Light6"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light7" type="Node2D" parent="Lines/Line2"]
-position = Vector2( 0, 96 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line2/Light7"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Line3" type="Node2D" parent="Lines"]
+[node name="Light4" parent="Line1" instance=ExtResource( 11 )]
 position = Vector2( 48, 0 )
+
+[node name="Light5" parent="Line1" instance=ExtResource( 11 )]
+position = Vector2( 64, 0 )
+
+[node name="Light6" parent="Line1" instance=ExtResource( 11 )]
+position = Vector2( 80, 0 )
+
+[node name="Light7" parent="Line1" instance=ExtResource( 11 )]
+position = Vector2( 96, 0 )
+
+[node name="Line2" type="Node2D" parent="."]
+position = Vector2( 16, 88 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Light1" type="Node2D" parent="Lines/Line3"]
-rotation = 1.57079
+[node name="Light1" parent="Line2" instance=ExtResource( 3 )]
+
+[node name="Light2" parent="Line2" instance=ExtResource( 3 )]
+position = Vector2( 16, 0 )
+
+[node name="Light3" parent="Line2" instance=ExtResource( 3 )]
+position = Vector2( 32, 0 )
+
+[node name="Light4" parent="Line2" instance=ExtResource( 3 )]
+position = Vector2( 48, 0 )
+
+[node name="Light5" parent="Line2" instance=ExtResource( 3 )]
+position = Vector2( 64, 0 )
+
+[node name="Light6" parent="Line2" instance=ExtResource( 3 )]
+position = Vector2( 80, 0 )
+
+[node name="Light7" parent="Line2" instance=ExtResource( 3 )]
+position = Vector2( 96, 0 )
+
+[node name="Line3" type="Node2D" parent="."]
+position = Vector2( 16, 112 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line3/Light1"]
+[node name="Light1" parent="Line3" instance=ExtResource( 3 )]
+
+[node name="Light2" parent="Line3" instance=ExtResource( 3 )]
+position = Vector2( 16, 0 )
+
+[node name="Light3" parent="Line3" instance=ExtResource( 3 )]
+position = Vector2( 32, 0 )
+
+[node name="Light4" parent="Line3" instance=ExtResource( 3 )]
+position = Vector2( 48, 0 )
+
+[node name="Light5" parent="Line3" instance=ExtResource( 3 )]
+position = Vector2( 64, 0 )
+
+[node name="Light6" parent="Line3" instance=ExtResource( 3 )]
+position = Vector2( 80, 0 )
+
+[node name="Light7" parent="Line3" instance=ExtResource( 3 )]
+position = Vector2( 96, 0 )
+
+[node name="Line4" type="Node2D" parent="."]
+position = Vector2( 16, 136 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Light1" parent="Line4" instance=ExtResource( 3 )]
+
+[node name="Light2" parent="Line4" instance=ExtResource( 3 )]
+position = Vector2( 16, 0 )
+
+[node name="Light3" parent="Line4" instance=ExtResource( 3 )]
+position = Vector2( 32, 0 )
+
+[node name="Light4" parent="Line4" instance=ExtResource( 3 )]
+position = Vector2( 48, 0 )
+
+[node name="Light5" parent="Line4" instance=ExtResource( 3 )]
+position = Vector2( 64, 0 )
+
+[node name="Light6" parent="Line4" instance=ExtResource( 3 )]
+position = Vector2( 80, 0 )
+
+[node name="Light7" parent="Line4" instance=ExtResource( 3 )]
+position = Vector2( 96, 0 )
+
+[node name="Line1Button" type="TouchScreenButton" parent="."]
+position = Vector2( 16, 152 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 5 )
+
+[node name="Line2Button" type="TouchScreenButton" parent="."]
+position = Vector2( 32, 152 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 5 )
+
+[node name="Line3Button" type="TouchScreenButton" parent="."]
+position = Vector2( 16, 168 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 5 )
+
+[node name="Line4Button" type="TouchScreenButton" parent="."]
+position = Vector2( 32, 168 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 5 )
+
+[node name="CommitButton" type="AnimatedSprite" parent="."]
+position = Vector2( 80, 160 )
 frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light2" type="Node2D" parent="Lines/Line3"]
-position = Vector2( 0, 16 )
-rotation = 1.57079
+animation = "Red"
+centered = false
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line3/Light2"]
-frames = SubResource( 3 )
-animation = "On"
+[node name="CommitButton" type="TouchScreenButton" parent="CommitButton"]
+modulate = Color( 1, 1, 1, 0 )
+normal = SubResource( 4 )
 
-[node name="Light3" type="Node2D" parent="Lines/Line3"]
-position = Vector2( 0, 32 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
+[node name="ThinkingLights" parent="." instance=ExtResource( 7 )]
+position = Vector2( 56, 152 )
 
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line3/Light3"]
-frames = SubResource( 3 )
-animation = "On"
+[node name="LightOffer" parent="." instance=ExtResource( 8 )]
 
-[node name="Light4" type="Node2D" parent="Lines/Line3"]
-position = Vector2( 0, 48 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
+[node name="TokenGiver" type="Node2D" parent="."]
 
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line3/Light4"]
-frames = SubResource( 3 )
-animation = "On"
+[node name="TokenGiverSprite" type="Sprite" parent="."]
+position = Vector2( 32, 24 )
+texture = ExtResource( 10 )
 
-[node name="Light5" type="Node2D" parent="Lines/Line3"]
-position = Vector2( 0, 64 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line3/Light5"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light6" type="Node2D" parent="Lines/Line3"]
-position = Vector2( 0, 80 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line3/Light6"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light7" type="Node2D" parent="Lines/Line3"]
-position = Vector2( 0, 96 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line3/Light7"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Line4" type="Node2D" parent="Lines"]
-position = Vector2( 72, 0 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Light1" type="Node2D" parent="Lines/Line4"]
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line4/Light1"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light2" type="Node2D" parent="Lines/Line4"]
-position = Vector2( 0, 16 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line4/Light2"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light3" type="Node2D" parent="Lines/Line4"]
-position = Vector2( 0, 32 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line4/Light3"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light4" type="Node2D" parent="Lines/Line4"]
-position = Vector2( 0, 48 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line4/Light4"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light5" type="Node2D" parent="Lines/Line4"]
-position = Vector2( 0, 64 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line4/Light5"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light6" type="Node2D" parent="Lines/Line4"]
-position = Vector2( 0, 80 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line4/Light6"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="Light7" type="Node2D" parent="Lines/Line4"]
-position = Vector2( 0, 96 )
-rotation = 1.57079
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Lines/Line4/Light7"]
-frames = SubResource( 3 )
-animation = "On"
-
-[node name="button" type="AnimatedSprite" parent="."]
-position = Vector2( 100, 172 )
-frames = SubResource( 6 )
-animation = "green"
-
-[node name="trigger" type="Sprite" parent="."]
-position = Vector2( 20, 164 )
-texture = ExtResource( 2 )
-
-[node name="trigger2" type="Sprite" parent="."]
-position = Vector2( 36, 180 )
-texture = ExtResource( 2 )
-
-[node name="trigger3" type="Sprite" parent="."]
-position = Vector2( 20, 180 )
-texture = ExtResource( 2 )
-
-[node name="trigger4" type="Sprite" parent="."]
-position = Vector2( 36, 164 )
-texture = ExtResource( 2 )
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 64, 152 )
-frames = SubResource( 9 )
-animation = "on"
-frame = 1
-playing = true
-
-[node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
-position = Vector2( 72, 152 )
-frames = SubResource( 9 )
-animation = "on"
-frame = 1
-playing = true
-
-[node name="AnimatedSprite3" type="AnimatedSprite" parent="."]
-position = Vector2( 80, 152 )
-frames = SubResource( 9 )
-animation = "on"
-playing = true
+[node name="Text" parent="." instance=ExtResource( 4 )]
+position = Vector2( 24, 8 )
+[connection signal="pressed" from="Line1Button" to="Line1" method="turn_a_light_off"]
+[connection signal="pressed" from="Line2Button" to="Line2" method="turn_a_light_off"]
+[connection signal="pressed" from="Line3Button" to="Line3" method="turn_a_light_off"]
+[connection signal="pressed" from="Line4Button" to="Line4" method="turn_a_light_off"]
+[connection signal="pressed" from="CommitButton/CommitButton" to="." method="go_next_turn"]
