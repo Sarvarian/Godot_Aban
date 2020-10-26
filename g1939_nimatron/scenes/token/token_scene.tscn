@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://g1939_nimatron/token/token.tscn" type="PackedScene" id=1]
+[ext_resource path="res://g1939_nimatron/scenes/token/token.tscn" type="PackedScene" id=1]
 [ext_resource path="res://g1939_nimatron/texturs/light_white.png" type="Texture" id=2]
-[ext_resource path="res://g1939_nimatron/token/token_scene.gd" type="Script" id=3]
+[ext_resource path="res://g1939_nimatron/scenes/token/token_scene.gd" type="Script" id=3]
 [ext_resource path="res://g1939_nimatron/texturs/token.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -45,7 +45,6 @@ script = ExtResource( 3 )
 light_mask = 2
 position = Vector2( 64, 96 )
 texture = ExtResource( 2 )
-energy = 0.85
 range_height = 100.0
 range_item_cull_mask = 2
 __meta__ = {

@@ -10,7 +10,7 @@ var cpu_move : PoolByteArray = []
 
 
 func _ready() -> void:
-	$TokenGiver.add_child(token_scene.instance())
+#	$TokenGiver.add_child(token_scene.instance())
 	for c in get_children():
 		if c.has_method("turn_a_light_off"):
 			lines.append(c)

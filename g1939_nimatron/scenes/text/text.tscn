@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://g1939_nimatron/text/bitmapfont.tres" type="TileSet" id=1]
+[ext_resource path="res://g1939_nimatron/scenes/text/bitmapfont.tres" type="TileSet" id=1]
+
 
 
 [node name="Text" type="Node2D"]

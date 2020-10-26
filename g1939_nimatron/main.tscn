@@ -2,34 +2,34 @@
 
 [ext_resource path="res://g1939_nimatron/scripts/game_master.gd" type="Script" id=1]
 [ext_resource path="res://g1939_nimatron/scripts/line.gd" type="Script" id=2]
-[ext_resource path="res://g1939_nimatron/light/light.tscn" type="PackedScene" id=3]
-[ext_resource path="res://g1939_nimatron/text/text.tscn" type="PackedScene" id=4]
+[ext_resource path="res://g1939_nimatron/scenes/light/light.tscn" type="PackedScene" id=3]
+[ext_resource path="res://g1939_nimatron/scenes/text/text.tscn" type="PackedScene" id=4]
 [ext_resource path="res://g1939_nimatron/texturs/trigger.png" type="Texture" id=5]
 [ext_resource path="res://g1939_nimatron/texturs/button.png" type="Texture" id=6]
-[ext_resource path="res://g1939_nimatron/thinking_lights/thinking_lights.tscn" type="PackedScene" id=7]
-[ext_resource path="res://g1939_nimatron/light_offer/light_offer.tscn" type="PackedScene" id=8]
-[ext_resource path="res://g1939_nimatron/token/token_scene.tscn" type="PackedScene" id=9]
+[ext_resource path="res://g1939_nimatron/scenes/thinking_lights/thinking_lights.tscn" type="PackedScene" id=7]
+[ext_resource path="res://g1939_nimatron/scenes/light_offer/light_offer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://g1939_nimatron/scenes/token/token_scene.tscn" type="PackedScene" id=9]
 [ext_resource path="res://g1939_nimatron/texturs/token_giver.png" type="Texture" id=10]
-[ext_resource path="res://g1939_nimatron/light/light_blue.tscn" type="PackedScene" id=11]
+[ext_resource path="res://g1939_nimatron/scenes/light/light_blue.tscn" type="PackedScene" id=11]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 6 )
-region = Rect2( 0, 0, 24, 16 )
+region = Rect2( 24, 0, 24, 16 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 6 )
-region = Rect2( 24, 0, 24, 16 )
+region = Rect2( 0, 0, 24, 16 )
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ SubResource( 1 ) ],
 "loop": false,
-"name": "Red",
+"name": "Green",
 "speed": 0.0
 }, {
 "frames": [ SubResource( 2 ) ],
 "loop": false,
-"name": "Green",
+"name": "Red",
 "speed": 0.0
 } ]
 
