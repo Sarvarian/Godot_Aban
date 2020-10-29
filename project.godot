@@ -49,15 +49,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/aban/statics/static.gd"
 }, {
-"base": "Reference",
-"class": "AbTriPixA",
+"base": "AbStatic",
+"class": "AbSystem",
 "language": "GDScript",
-"path": "res://addons/aban/components/pixels/tripixa.gd"
+"path": "res://addons/aban/statics/system.gd"
 }, {
 "base": "AbPix",
-"class": "AbTriPixAA",
+"class": "AbTriPix",
 "language": "GDScript",
-"path": "res://addons/aban/components/pixels/tripixaa.gd"
+"path": "res://addons/aban/components/pixels/tripix.gd"
 } ]
 _global_script_class_icons={
 "AbColorDesigner": "",
@@ -68,8 +68,8 @@ _global_script_class_icons={
 "AbResetButton": "res://addons/aban/icons/reset_button.png",
 "AbSettings": "res://addons/aban/icons/settings.png",
 "AbStatic": "",
-"AbTriPixA": "",
-"AbTriPixAA": "res://addons/aban/icons/tripix.png"
+"AbSystem": "",
+"AbTriPix": "res://addons/aban/icons/tripix.png"
 }
 
 [application]
