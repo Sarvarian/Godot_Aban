@@ -9,10 +9,35 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "AbDesigner",
+"class": "AbColorDesigner",
+"language": "GDScript",
+"path": "res://addons/aban/components/designers/abcolor_design/abcolor_designer.gd"
+}, {
+"base": "Node",
+"class": "AbColorSettings",
+"language": "GDScript",
+"path": "res://addons/aban/settings/abcolor_settings/abcolor_settings.gd"
+}, {
+"base": "Control",
+"class": "AbDesigner",
+"language": "GDScript",
+"path": "res://addons/aban/components/designers/designer.gd"
+}, {
 "base": "AbStatic",
 "class": "AbNim",
 "language": "GDScript",
 "path": "res://addons/aban/statics/nim.gd"
+}, {
+"base": "Button",
+"class": "AbResetButton",
+"language": "GDScript",
+"path": "res://addons/aban/components/reset_button/reset_button.gd"
+}, {
+"base": "Node",
+"class": "AbSettings",
+"language": "GDScript",
+"path": "res://addons/aban/settings/settings.gd"
 }, {
 "base": "Object",
 "class": "AbStatic",
@@ -20,14 +45,19 @@ _global_script_classes=[ {
 "path": "res://addons/aban/statics/static.gd"
 } ]
 _global_script_class_icons={
+"AbColorDesigner": "",
+"AbColorSettings": "",
+"AbDesigner": "res://addons/aban/icons/designer.png",
 "AbNim": "",
+"AbResetButton": "res://addons/aban/icons/reset_button.png",
+"AbSettings": "res://addons/aban/icons/settings.png",
 "AbStatic": ""
 }
 
 [application]
 
 config/name="Aban"
-run/main_scene="res://g1939_nimatron/main.tscn"
+run/main_scene="res://1939_nimatron/design.tscn"
 
 [autoload]
 
@@ -39,7 +69,6 @@ settings/stdout/verbose_stdout=true
 
 [display]
 
-window/size/width=800
 window/handheld/orientation="sensor_portrait"
 window/stretch/mode="2d"
 window/stretch/aspect="keep_width"

@@ -1,0 +1,28 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/aban/components/designers/abcolor_design/color_picker.gd" type="Script" id=1]
+
+[node name="ColorPicker" type="HBoxContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+alignment = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Color" type="ColorPickerButton" parent="."]
+margin_left = 920.0
+margin_right = 970.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 50, 50 )
+
+[node name="Text" type="RichTextLabel" parent="."]
+margin_left = 974.0
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 50, 50 )
+text = "434"
+[connection signal="color_changed" from="Color" to="." method="_on_Color_color_changed"]
