@@ -29,6 +29,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/aban/statics/nim.gd"
 }, {
+"base": "Sprite",
+"class": "AbPix",
+"language": "GDScript",
+"path": "res://addons/aban/components/pixels/pix.gd"
+}, {
 "base": "Button",
 "class": "AbResetButton",
 "language": "GDScript",
@@ -43,15 +48,22 @@ _global_script_classes=[ {
 "class": "AbStatic",
 "language": "GDScript",
 "path": "res://addons/aban/statics/static.gd"
+}, {
+"base": "AbPix",
+"class": "AbTriPix",
+"language": "GDScript",
+"path": "res://addons/aban/components/pixels/tripix.gd"
 } ]
 _global_script_class_icons={
 "AbColorDesigner": "",
 "AbColorSettings": "",
 "AbDesigner": "res://addons/aban/icons/designer.png",
 "AbNim": "",
+"AbPix": "res://addons/aban/icons/pix.png",
 "AbResetButton": "res://addons/aban/icons/reset_button.png",
 "AbSettings": "res://addons/aban/icons/settings.png",
-"AbStatic": ""
+"AbStatic": "",
+"AbTriPix": ""
 }
 
 [application]
@@ -62,6 +74,7 @@ run/main_scene="res://1939_nimatron/design.tscn"
 [autoload]
 
 AbColor="*res://addons/aban/singletons/ab_color.gd"
+AbGlobal="*res://addons/aban/singletons/ab_global.gd"
 
 [debug]
 

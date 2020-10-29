@@ -8,7 +8,9 @@ var line_that_turns_off : Node2D = null
 var can_go_next_turn : bool = false
 var cpu_move : PoolByteArray = []
 
-onready var sabt : TouchScreenButton = get_node("../sabt")
+onready var sabt : TouchScreenButton = get_node("../Sabt")
+onready var thinking_lights : Node2D = get_node("../ThinkingLights")
+onready var light_offer : Timer = get_node("../LightOffer")
 
 
 func _ready() -> void:
@@ -21,7 +23,9 @@ func _ready() -> void:
 		l.connect("lamp_khamoosh", self, "a_light_turns_off")
 		l.connect("khat_bazgasht", self, "a_line_got_reset")
 # warning-ignore:return_value_discarded
-#	$ThinkingLights.get_child(0).connect("animation_finished", self, "thinking_finished")
+	thinking_lights.get_child(0).connect("animation_finished", self, "thinking_finished")
+# warning-ignore:return_value_discarded
+	light_offer.connect("cpu_done", self, "cpu_done")
 
 
 func a_light_turns_off(line : Node2D) -> void:
@@ -61,11 +65,11 @@ func cpu_turn() -> void:
 	for l in lines:
 		heaps.append(l.how_many_are_on())
 	cpu_move = AbNim.play(heaps)
-	$ThinkingLights.start_thinking(heaps)
+	thinking_lights.start_thinking(heaps)
 
 
 func thinking_finished(_anim_name : String) -> void:
-	$LightOffer.start_offing(lines[cpu_move[0]], cpu_move[1])
+	light_offer.start_offing(lines[cpu_move[0]], cpu_move[1])
 
 
 func cpu_done() -> void:

@@ -8,6 +8,8 @@ var autoload_singletons : PoolStringArray = []
 func _enter_tree():
 	add_autoload_singleton("AbColor", "res://addons/aban/singletons/ab_color.gd")
 	autoload_singletons.append("AbColor")
+	add_autoload_singleton("AbGlobal", "res://addons/aban/singletons/ab_global.gd")
+	autoload_singletons.append("AbGlobal")
 	pass
 
 

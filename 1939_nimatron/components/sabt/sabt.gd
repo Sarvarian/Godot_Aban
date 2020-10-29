@@ -34,9 +34,10 @@ func green() -> void:
 	$Painter.paint_green()
 
 
-func _on_sabt_pressed():
-	modulate.v -= .2
+func _on_Sabt_pressed() -> void:
+	modulate.v = .8
 
 
-func _on_sabt_released():
-	modulate.v += .2
+func _on_Sabt_released() -> void:
+	modulate.v = 1
+

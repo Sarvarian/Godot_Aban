@@ -1,18 +1,22 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://1939_nimatron/components/lamp/lamp.tscn" type="PackedScene" id=1]
-[ext_resource path="res://addons/aban/settings/abcolor_settings/abcolor_settings.gd" type="Script" id=2]
+[ext_resource path="res://1939_nimatron/ab_color_settings.gd" type="Script" id=2]
 [ext_resource path="res://1939_nimatron/components/khat/khat.gd" type="Script" id=3]
 [ext_resource path="res://1939_nimatron/components/lamp/atlases/noor.tres" type="Texture" id=4]
 [ext_resource path="res://1939_nimatron/components/modir_bazi/modir_bazi.gd" type="Script" id=5]
 [ext_resource path="res://1939_nimatron/components/sabt/sabt.tscn" type="PackedScene" id=6]
 [ext_resource path="res://1939_nimatron/components/paszamine/paszamine.tscn" type="PackedScene" id=7]
+[ext_resource path="res://1939_nimatron/components/thinking_lights/thinking_lights.tscn" type="PackedScene" id=8]
+[ext_resource path="res://1939_nimatron/components/light_offer/light_offer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://test/new scene.tscn" type="PackedScene" id=10]
+
 
 [node name="Main" type="Node2D"]
 
 [node name="AbColorSettings" type="Node" parent="."]
 script = ExtResource( 2 )
-palette = [ Color( 0, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 0, 1 ), Color( 0, 1, 0, 1 ), Color( 0, 0.588235, 1, 1 ), Color( 0.95, 1, 0, 1 ), Color( 1, 0.513726, 0, 1 ), Color( 0.313726, 1, 0, 1 ) ]
+palette = [ Color( 0, 0, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 0, 1 ), Color( 0, 1, 0, 1 ), Color( 0, 0.576471, 1, 1 ), Color( 0.945098, 1, 0, 1 ), Color( 1, 0.490196, 0, 1 ), Color( 0, 1, 0.180392, 1 ), Color( 1, 1, 0, 1 ) ]
 
 [node name="Panel" parent="." instance=ExtResource( 7 )]
 
@@ -26,6 +30,9 @@ __meta__ = {
 
 [node name="Khat1" type="Node2D" parent="ModirBazi"]
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Lamp" parent="ModirBazi/Khat1" instance=ExtResource( 1 )]
 
@@ -352,9 +359,20 @@ normal = ExtResource( 4 )
 position = Vector2( -24, -48 )
 normal = ExtResource( 4 )
 
-[node name="sabt" parent="." instance=ExtResource( 6 )]
+[node name="Sabt" parent="." instance=ExtResource( 6 )]
 position = Vector2( 80, 160 )
 scale = Vector2( 1.5, 1.5 )
+
+[node name="ThinkingLights" parent="." instance=ExtResource( 8 )]
+position = Vector2( 56, 160 )
+
+[node name="LightOffer" parent="." instance=ExtResource( 9 )]
+
+[node name="Control" parent="." instance=ExtResource( 10 )]
+margin_left = 16.0
+margin_top = 8.0
+margin_right = 112.0
+margin_bottom = 40.0
 [connection signal="pressed" from="ModirBazi/Khat1Button/TouchScreenButton" to="ModirBazi/Khat1" method="turn_a_light_off"]
 [connection signal="pressed" from="ModirBazi/Khat2Buttons/TouchScreenButton" to="ModirBazi/Khat2" method="turn_a_light_off"]
 [connection signal="pressed" from="ModirBazi/Khat2Buttons/TouchScreenButton2" to="ModirBazi/Khat2" method="turn_a_light_off"]
@@ -392,3 +410,4 @@ scale = Vector2( 1.5, 1.5 )
 [connection signal="pressed" from="ModirBazi/Khat4Buttons/TouchScreenButton16" to="ModirBazi/Khat4" method="turn_a_light_off"]
 [connection signal="pressed" from="ModirBazi/Khat4Buttons/TouchScreenButton17" to="ModirBazi/Khat4" method="turn_a_light_off"]
 [connection signal="pressed" from="ModirBazi/Khat4Buttons/TouchScreenButton18" to="ModirBazi/Khat4" method="turn_a_light_off"]
+[connection signal="released" from="Sabt" to="ModirBazi" method="go_next_turn"]

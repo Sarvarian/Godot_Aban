@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/stare.png-2c5aff71d66c052fb5a6807550243de2.stex"
+path="res://.import/whole.png-712103d471b9a2b7b36503bce2483ed9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://1939_nimatron/texturs/stare.png"
-dest_files=[ "res://.import/stare.png-2c5aff71d66c052fb5a6807550243de2.stex" ]
+source_file="res://1939_nimatron/texturs/whole.png"
+dest_files=[ "res://.import/whole.png-712103d471b9a2b7b36503bce2483ed9.stex" ]
 
 [params]
 

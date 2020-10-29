@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/star.png-fd777cf8a149f862f95e91ef4283b1eb.stex"
+path="res://.import/tripix.png-50d84b79fd591d35a3b17ab55a32030b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://1939_nimatron/texturs/star.png"
-dest_files=[ "res://.import/star.png-fd777cf8a149f862f95e91ef4283b1eb.stex" ]
+source_file="res://test/tripix.png"
+dest_files=[ "res://.import/tripix.png-50d84b79fd591d35a3b17ab55a32030b.stex" ]
 
 [params]
 

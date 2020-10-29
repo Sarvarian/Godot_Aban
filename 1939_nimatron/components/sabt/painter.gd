@@ -14,10 +14,10 @@ func paint_red() -> void:
 		saye_bala.modulate = AbColor.palette[6]
 		saye_payin.modulate = AbColor.palette[6]
 	
-	sath.modulate.v = 1
-	saye_vasat.modulate.v = .76
-	saye_bala.modulate.v = .76
-	saye_payin.modulate.v = .5
+	sath.modulate.v -= 0
+	saye_vasat.modulate.v -= .24
+	saye_bala.modulate.v -= .24
+	saye_payin.modulate.v -= .5
 
 
 func paint_green() -> void:
@@ -27,7 +27,7 @@ func paint_green() -> void:
 		saye_bala.modulate = AbColor.palette[7]
 		saye_payin.modulate = AbColor.palette[7]
 	
-	sath.modulate.v = 1
-	saye_vasat.modulate.v = .76
-	saye_bala.modulate.v = .76
-	saye_payin.modulate.v = .5
+	sath.modulate.v -= 0
+	saye_vasat.modulate.v -= .24
+	saye_bala.modulate.v -= .24
+	saye_payin.modulate.v -= .5
