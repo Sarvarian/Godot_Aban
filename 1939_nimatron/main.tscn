@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://1939_nimatron/components/lamp/lamp.tscn" type="PackedScene" id=1]
 [ext_resource path="res://1939_nimatron/ab_color_settings.gd" type="Script" id=2]
@@ -9,8 +9,6 @@
 [ext_resource path="res://1939_nimatron/components/paszamine/paszamine.tscn" type="PackedScene" id=7]
 [ext_resource path="res://1939_nimatron/components/thinking_lights/thinking_lights.tscn" type="PackedScene" id=8]
 [ext_resource path="res://1939_nimatron/components/light_offer/light_offer.tscn" type="PackedScene" id=9]
-[ext_resource path="res://test/new scene.tscn" type="PackedScene" id=10]
-
 
 [node name="Main" type="Node2D"]
 
@@ -367,12 +365,6 @@ scale = Vector2( 1.5, 1.5 )
 position = Vector2( 56, 160 )
 
 [node name="LightOffer" parent="." instance=ExtResource( 9 )]
-
-[node name="Control" parent="." instance=ExtResource( 10 )]
-margin_left = 16.0
-margin_top = 8.0
-margin_right = 112.0
-margin_bottom = 40.0
 [connection signal="pressed" from="ModirBazi/Khat1Button/TouchScreenButton" to="ModirBazi/Khat1" method="turn_a_light_off"]
 [connection signal="pressed" from="ModirBazi/Khat2Buttons/TouchScreenButton" to="ModirBazi/Khat2" method="turn_a_light_off"]
 [connection signal="pressed" from="ModirBazi/Khat2Buttons/TouchScreenButton2" to="ModirBazi/Khat2" method="turn_a_light_off"]

@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "AbAsset",
+"language": "GDScript",
+"path": "res://addons/aban/assets/asset.gd"
+}, {
 "base": "AbDesigner",
 "class": "AbColorDesigner",
 "language": "GDScript",
@@ -28,11 +33,6 @@ _global_script_classes=[ {
 "class": "AbNim",
 "language": "GDScript",
 "path": "res://addons/aban/statics/nim.gd"
-}, {
-"base": "Sprite",
-"class": "AbPix",
-"language": "GDScript",
-"path": "res://addons/aban/components/pixels/pix.gd"
 }, {
 "base": "Button",
 "class": "AbResetButton",
@@ -54,22 +54,22 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://addons/aban/statics/system.gd"
 }, {
-"base": "AbPix",
-"class": "AbTriPix",
+"base": "AbAsset",
+"class": "AbTimeStatedButton",
 "language": "GDScript",
-"path": "res://addons/aban/components/pixels/tripix.gd"
+"path": "res://addons/aban/assets/time_stated_button/loader.gd"
 } ]
 _global_script_class_icons={
+"AbAsset": "res://addons/aban/icons/asset.png",
 "AbColorDesigner": "",
 "AbColorSettings": "",
 "AbDesigner": "res://addons/aban/icons/designer.png",
 "AbNim": "",
-"AbPix": "res://addons/aban/icons/pix.png",
 "AbResetButton": "res://addons/aban/icons/reset_button.png",
 "AbSettings": "res://addons/aban/icons/settings.png",
 "AbStatic": "",
 "AbSystem": "",
-"AbTriPix": "res://addons/aban/icons/tripix.png"
+"AbTimeStatedButton": ""
 }
 
 [application]

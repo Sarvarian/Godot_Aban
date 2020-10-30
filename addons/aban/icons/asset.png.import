@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tripix.png-44034a824a475624ae25d0e2e608bbfe.stex"
+path="res://.import/asset.png-fc3c5d15598f9404245cbc89ec57485a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/aban/components/pixels/textures/tripix.png"
-dest_files=[ "res://.import/tripix.png-44034a824a475624ae25d0e2e608bbfe.stex" ]
+source_file="res://addons/aban/icons/asset.png"
+dest_files=[ "res://.import/asset.png-fc3c5d15598f9404245cbc89ec57485a.stex" ]
 
 [params]
 

@@ -1,36 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[sub_resource type="StreamTexture" id=1]
-flags = 4
-load_path = "res://.import/tripixaa.png-ed51e61fc9ee24a9d394a7dcd96d97bd.stex"
+[ext_resource path="res://addons/aban/assets/time_stated_button/loader.gd" type="Script" id=1]
 
-[node name="Node2D" type="Node2D"]
-
-[node name="AbTriPixAA" type="Sprite" parent="."]
-position = Vector2( 450.474, 301.02 )
-texture = SubResource( 1 )
-
-[node name="AbTriPixAA2" type="Sprite" parent="."]
-position = Vector2( 513, 301 )
-rotation = -3.14159
-texture = SubResource( 1 )
-
-[node name="AbTriPixAA3" type="Sprite" parent="."]
-position = Vector2( 388, 301 )
-rotation = -3.14159
-texture = SubResource( 1 )
-
-[node name="AbTriPixAA4" type="Sprite" parent="."]
-position = Vector2( 450.474, 196.02 )
-rotation = -3.14159
-texture = SubResource( 1 )
-
-[node name="AbTriPixAA5" type="Sprite" parent="."]
-position = Vector2( 513, 196 )
-rotation = -6.28319
-texture = SubResource( 1 )
-
-[node name="AbTriPixAA6" type="Sprite" parent="."]
-position = Vector2( 388, 196 )
-rotation = -6.28319
-texture = SubResource( 1 )
+[node name="AbTimeStatedButton" type="Node"]
+script = ExtResource( 1 )
